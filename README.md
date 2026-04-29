@@ -9,3 +9,8 @@ Exploration and development of GIS engine integration scripts, focusing on DJI S
 算法生成层（长链推理）： Agent 会根据 OGC 标准和数学模型，自动推导空间变换矩阵，并生成经过多轮自测试优化的 Python/C++ 脚本，解决空间拓扑计算中的边界值问题。
 
 渲染优化层（多 Agent 协作）： 利用一个 Agent 负责生成高效率的 GLSL 着色器用于前端特效，另一个 Agent 同步生成基于 3D Tiles 格式的加载优化方案，实现“外业数据-内业处理-云端可视化”的自动化闭环。
+本仓库已包含以下核心功能代码：
+
+coord_transformer.py: 实现高精度坐标转换核心逻辑（WGS84 -> CGCS2000），支持处理无人机 POS 数据。
+
+dji_tiles_viewer.js: 基于 Cesium.js 的 WebGIS 渲染优化脚本，针对大疆倾斜摄影模型进行加载调优。
